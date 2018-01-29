@@ -1,0 +1,87 @@
+body {
+  background-color: #dcbb9a;
+  color: #000000;
+  text-align: justify; }
+
+#content {
+  width: 960px;
+  background-color: #ffffff;
+  margin: auto;
+  padding: 20px; }
+  #content h1, #content h2 {
+    color: #893c00; }
+  #content h1 {
+    text-align: center;
+    text-transform: none; }
+  #content img {
+    border: 2px solid #ffffff;
+    outline: 2px solid #893c00;
+    display: block;
+    float: left;
+    margin: 0 20px 10px 0; }
+  #content a {
+    color: #3d70a1; }
+
+.brief {
+  padding: 20px;
+  background-color: #fadcba;
+  float: left;
+  color: #000000;
+  margin: 0 20px 10px 0;
+  width: 30%;
+  margin-bottom: 10px; }
+  #content .brief + img {
+    float: right;
+    margin: 0 0 10px 20px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse; }
+  table caption {
+    text-align: right;
+    color: #000; }
+  table th {
+    background-color: #e0e0e0;
+    text-transform: uppercase;
+    font-weight: normal;
+    padding: 10px;
+    border-left: 1px solid #ffffff; }
+    table th:first-child {
+      border-left: 0; }
+  table td {
+    background-color: #ffffff;
+    padding: 10px; }
+  table tr {
+    border-bottom: 1px solid #e0e0e0; }
+
+form {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  form label {
+    color: #893c00;
+    width: 49%;
+    margin: 6px 0;
+    text-transform: uppercase; }
+    form label input, form label textarea {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px; }
+    form label:nth-last-child(-n+4) {
+      width: 100%; }
+    form label textarea {
+      height: 150px;
+      overflow: hidden; }
+  form button {
+    text-transform: uppercase;
+    background-color: #ffffff;
+    color: #3d70a1;
+    padding: 10px 30px;
+    border: 1px solid #3d70a1; }
+    form button:hover {
+      background-color: #3d70a1;
+      color: #000000;
+      cursor: pointer; }
+
+/*# sourceMappingURL=style1.css.map */
