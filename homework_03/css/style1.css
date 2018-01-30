@@ -8,7 +8,8 @@ body {
   background-color: #ffffff;
   margin: auto;
   padding: 20px; }
-  #content h1, #content h2 {
+  #content h1,
+  #content h2 {
     color: #893c00; }
   #content h1 {
     text-align: center;
@@ -37,51 +38,57 @@ body {
 table {
   width: 100%;
   border-collapse: collapse; }
-  table caption {
-    text-align: right;
-    color: #000; }
-  table th {
-    background-color: #e0e0e0;
-    text-transform: uppercase;
-    font-weight: normal;
-    padding: 10px;
-    border-left: 1px solid #ffffff; }
-    table th:first-child {
-      border-left: 0; }
-  table td {
-    background-color: #ffffff;
-    padding: 10px; }
-  table tr {
-    border-bottom: 1px solid #e0e0e0; }
+
+caption {
+  text-align: right;
+  color: #000; }
+
+th {
+  background-color: #e0e0e0;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding: 10px;
+  border-left: 1px solid #ffffff; }
+  th:first-child {
+    border-left: 0; }
+
+td {
+  background-color: #ffffff;
+  padding: 10px; }
+
+tr {
+  border-bottom: 1px solid #e0e0e0; }
 
 form {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-between; }
-  form label {
-    color: #893c00;
-    width: 49%;
-    margin: 6px 0;
-    text-transform: uppercase; }
-    form label input, form label textarea {
-      width: 100%;
-      padding: 5px;
-      margin-top: 5px; }
-    form label:nth-last-child(-n+4) {
-      width: 100%; }
-    form label textarea {
-      height: 150px;
-      overflow: hidden; }
-  form button {
-    text-transform: uppercase;
-    background-color: #ffffff;
-    color: #3d70a1;
-    padding: 10px 30px;
-    border: 1px solid #3d70a1; }
-    form button:hover {
-      background-color: #3d70a1;
-      color: #000000;
-      cursor: pointer; }
 
-/*# sourceMappingURL=style1.css.map */
+label {
+  color: #893c00;
+  width: 49%;
+  margin: 6px 0;
+  text-transform: uppercase; }
+  label input,
+  label textarea {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px; }
+  label:nth-last-child(-n+4) {
+    width: 100%; }
+
+textarea {
+  height: 150px;
+  overflow: hidden; }
+
+button {
+  text-transform: uppercase;
+  background-color: #ffffff;
+  color: #3d70a1;
+  padding: 10px 30px;
+  border: 1px solid #3d70a1; }
+  button:hover {
+    background-color: #3d70a1;
+    color: #000000;
+    cursor: pointer; }

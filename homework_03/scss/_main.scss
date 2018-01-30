@@ -1,111 +1,131 @@
-@mixin h1tt($tt){
-        text-transform: $tt;
-    }
-
-@mixin briefWidth($width, $mb){
-    width: $width;
-    margin-bottom: $mb;
+@mixin h1tt($tt) {
+  text-transform: $tt;
+}
+@mixin briefWidth($width, $mb) {
+  width: $width;
+  margin-bottom: $mb;
 }
 
 body {
-    background-color: $bodyBGColor;
-    color: $textColor;
-    text-align: justify;
+  background-color: $bodyBGColor;
+  color: $textColor;
+  text-align: justify;
 }
-#content{
-    width: 960px;
-    background-color: $contentBackground;
-    margin: auto;
-    padding: 20px;
-    h1, h2{
-        color:$headersColor;
-    }
-    h1{
-        text-align: center;
-        @include h1tt($textTransform);
-    }
-    img{
-        border:2px solid $contentBackground;
-        outline: 2px solid $headersColor;
-        display: block;
-        float: left;
-        margin: 0 20px 10px 0;
-    }
-    a{
-        color: $btnColor;
-    }
-}
-.brief{
-    padding: 20px;
-    background-color: $briefBackground;
-    float:left;
-    color:#000000;
+
+#content {
+  width: 960px;
+  background-color: $contentBackground;
+  margin: auto;
+  padding: 20px;
+
+  h1,
+  h2 {
+    color: $headersColor;
+  }
+
+  h1 {
+    text-align: center;
+    @include h1tt($textTransform);
+  }
+
+  img {
+    border: 2px solid $contentBackground;
+    outline: 2px solid $headersColor;
+    display: block;
+    float: left;
     margin: 0 20px 10px 0;
-    @include briefWidth($briefWidth, $mb);
-    #content &+img{
-        float: right;
-        margin: 0 0 10px 20px;
-    }
+  }
+
+  a {
+    color: $btnColor;
+  }
 }
-table{
+
+.brief {
+  padding: 20px;
+  background-color: $briefBackground;
+  float: left;
+  color: #000000;
+  margin: 0 20px 10px 0;
+  @include briefWidth($briefWidth, $mb);
+
+  #content &+img {
+    float: right;
+    margin: 0 0 10px 20px;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  text-align: right;
+  color: #000;
+}
+
+th {
+  background-color: $thBackground;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding: 10px;
+  border-left: 1px solid #ffffff;
+
+  &:first-child {
+    border-left: 0;
+  }
+}
+
+td {
+  background-color: $tdBackground;
+  padding: 10px;
+}
+
+tr {
+  border-bottom: 1px solid $thBackground;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+label {
+  color: $headersColor;
+  width: 49%;
+  margin: 6px 0;
+  text-transform: uppercase;
+
+  input,
+  textarea {
     width: 100%;
-    border-collapse: collapse;
-    caption{
-        text-align: right;
-        color: #000;
-    }
-    th{
-        background-color: $thBackground;
-        text-transform: uppercase;
-        font-weight: normal;
-        padding: 10px;
-        border-left: 1px solid #ffffff;
-        &:first-child{
-            border-left: 0;
-        }
-    }
-    td{
-        background-color: $tdBackground;
-        padding: 10px;
-    }
-    tr{
-        border-bottom: 1px solid $thBackground;
-    }
-}    
-form{
-    display: flex;
+    padding: 5px;
+    margin-top: 5px;
+  }
+
+  &:nth-last-child(-n+4) {
     width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    label{
-        color: $headersColor;
-        width: 49%;
-        margin: 6px 0;
-        text-transform: uppercase;
-        input,textarea{
-            width: 100%;
-            padding: 5px;
-            margin-top: 5px;
-        }
-        &:nth-last-child(-n+4){
-            width: 100%;    
-        }
-        textarea{
-            height: 150px;
-            overflow: hidden;
-        }
-        
-    }
-    button{
-        text-transform: uppercase;
-        background-color: $contentBackground;
-        color:$btnColor;
-        padding: 10px 30px;
-        border:1px solid $btnColor;
-        &:hover{
-            background-color: $btnColor;
-            color:$textColor;
-            cursor: pointer;
-        }
-    }
+  }
+}
+
+textarea {
+  height: 150px;
+  overflow: hidden;
+}
+
+button {
+  text-transform: uppercase;
+  background-color: $contentBackground;
+  color: $btnColor;
+  padding: 10px 30px;
+  border: 1px solid $btnColor;
+
+  &:hover {
+    background-color: $btnColor;
+    color: $textColor;
+    cursor: pointer;
+  }
 }
