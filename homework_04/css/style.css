@@ -48,7 +48,8 @@ header nav li {
     padding: 8px 5px;
     padding-top: 0;
     transition: .5s;
-    border: 1px solid rgba(0, 0, 0, 0)
+    border: 1px solid rgba(0, 0, 0, 0);
+    position: relative;
 }
 
 header nav li:active {
@@ -67,12 +68,27 @@ header nav li a {
     font-weight: 100;
 }
 
-header nav li:hover {
-    border-bottom: 1px solid #B7C8D9;
+header nav li::after {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    display: block;
+    content: "";
+    height: 1px;
+    width: 0%;
+    background-color: #B7C8D9;
+    transition: width .3s ease-in-out;
+    transform: translate(-50%);
+}
+header nav li:hover::after{
+  width: 100%;
 }
 
-header nav li a:active {
-    color: #A4A4A4;
+header nav li:active::after {
+    width: 100%;
+}
+header nav li a:active{
+  color: #A4A4A4;
 }
 
 header .logo a {
