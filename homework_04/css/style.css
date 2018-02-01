@@ -349,7 +349,7 @@ footer {
     font-weight: bold;
     background-color: #F3F3F3;
     border: 1px solid #343638;
-    font-size: 1em;
+    font-size: .7em;
 }
 
 .blocks-4 [type=email]::-webkit-input-placeholder {
