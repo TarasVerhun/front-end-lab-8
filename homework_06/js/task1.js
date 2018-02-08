@@ -3,18 +3,23 @@ function getArea(a, b, c) {
     return Math.round(Math.sqrt(p * (p - a) * (p - b) * (p - c)) * 100) / 100;
 }
 
+function compareNum(a, b) {
+    if (a > b) return 1;
+    if (a < b) return -1;
+}
+
 let arr = [];
 
 arr.push(parseFloat(prompt("Enter the first side")));
 arr.push(parseFloat(prompt("Enter the second side")));
 arr.push(parseFloat(prompt("Enter the third side")));
 
-arr.sort().reverse();
+arr.sort(compareNum).reverse();
 let count = 0;
 for (let i = 0; i < arr.length; i++) {
     if (!isNaN(arr[i]) && arr[i] > 0) count++;
-
 }
+
 if (count < 3 || arr[0] >= arr[1] + arr[2]) {
     console.log('Incorrect data');
 } else {
