@@ -4,8 +4,8 @@ let usdInEur = eurRate / usdRate;
 usdInEur = usdInEur.toFixed(4);
 
 
-const eur = +prompt("Enter ammount of euros");
-const usd = +prompt('Enter ammount of dollars');
+const eur = parseFloat(prompt("Enter ammount of euros"));
+const usd = parseFloat(prompt('Enter ammount of dollars'));
 if (usd < 0 || eur < 0 || isNaN(usd) || isNaN(eur)) {
     console.log('incorrect data');
 } else {
