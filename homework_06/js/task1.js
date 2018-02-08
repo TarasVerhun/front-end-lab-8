@@ -5,9 +5,9 @@ function getArea(a, b, c) {
 
 var arr = [];
 
-arr.push(+prompt("Enter first side"));
-arr.push(+prompt("Enter second side"));
-arr.push(+prompt("Enter third side"));
+arr.push(+prompt("Enter the first side"));
+arr.push(+prompt("Enter the second side"));
+arr.push(+prompt("Enter the third side"));
 
 arr.sort().reverse();
 var count = 0;
