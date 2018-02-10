@@ -22,7 +22,7 @@ if (isNaN(height) || !height) {
             }
             console.log(p);
         } else {
-            console.error('The number must match required range: (1-20).');
+            console.error('The number must match the required range: (1-20).');
         }
     }
 }
