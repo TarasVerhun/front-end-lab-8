@@ -32,45 +32,38 @@ function showResult(fighter) {
 }
 
 function fighter(fighter) {
+    var Stats = fighter;
+    var CombatHistory = {
+        wins: 0,
+        loses: 0
+    };
     return {
-        Stats: {
-            name: fighter.name,
-            attack: fighter.attack,
-            hp: fighter.hp
-        },
-        CombatHistory: {
-            wins: 0,
-            loses: 0
-        },
         getName: function() {
-            return this.Stats.name;
+            return Stats.name;
         },
         block: function() {
             return Math.random() < 0.5;
         },
         getCombatHistory: function() {
-            return {
-                wins: this.CombatHistory.wins,
-                loses: this.CombatHistory.loses
-            };
+            return CombatHistory;
         },
         getStats: function() {
-            return this.Stats;
+            return Stats;
         },
         fight: function(defender) {
             if (defender.block()) {
-                console.log(defender.Stats.name + " blocked incoming damage");
+                console.log(defender.getStats().name + " blocked incoming damage");
                 return false;
             } else {
-                var diff = defender.Stats.hp - this.Stats.attack;
+                var diff = defender.getStats().hp - Stats.attack;
                 if (diff > 0) {
-                    defender.Stats.hp = diff;
+                    defender.getStats().hp = diff;
                 } else {
-                    this.CombatHistory.wins++;
-                    defender.CombatHistory.loses++;
-                    defender.Stats.hp = 0;
+                    CombatHistory.wins++;
+                    defender.getCombatHistory().loses += 1;
+                    defender.getStats().hp = 0;
                 }
-                console.log(this.Stats.name + " dealt damage to " + defender.Stats.name);
+                console.log(Stats.name + " dealt damage to " + defender.getStats().name);
                 return true;
             }
         }
