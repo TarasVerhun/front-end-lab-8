@@ -71,6 +71,7 @@ function fighter(fighter) {
                     defender.Stats.hp = 0;
                 }
                 console.log(this.Stats.name + " dealt damage to " + defender.Stats.name);
+                return true;
             }
         }
     };
