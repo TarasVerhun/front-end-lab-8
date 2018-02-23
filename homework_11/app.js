@@ -1,5 +1,12 @@
 let rootNode = document.getElementById("root");
 
+function toggle(event){
+    let icon = this.children[0].innerHTML;
+    this.children[0].innerHTML = icon == 'folder_open' ? 'folder' : 'folder_open';
+    let folderDisplay = this.nextElementSibling.style.display;
+    this.nextElementSibling.style.display = folderDisplay == 'block' ? 'none' : 'block';
+}
+
 function drawTree(structure, parentUl){
     structure.forEach((el) => {
         let li = document.createElement('li');
@@ -8,6 +15,7 @@ function drawTree(structure, parentUl){
         icon.className = 'material-icons';
         icon.innerHTML = !el.folder ? 'insert_drive_file' : 'folder';
         h4.className = el.folder ?  'folder' : '';
+        el.folder ? h4.addEventListener('click', toggle) : null;
         let span = document.createElement('span');
         span.innerHTML = el.title; 
         h4.appendChild(icon);
@@ -34,21 +42,9 @@ function drawTree(structure, parentUl){
     })
 }
 
-let folders = document.querySelectorAll('.folder');
-for(let i = 0; i< folders.length;i++){
-    folders[i].addEventListener('click', toggle, false);
-}
-
-function toggle(event){
-    let icon = this.children[0].innerHTML;
-    this.children[0].innerHTML = icon == 'folder_open' ? 'folder' : 'folder_open';
-    let folderDisplay = this.nextElementSibling.style.display;
-    this.nextElementSibling.style.display = folderDisplay == 'block' ? 'none' : 'block';
-}
-
 let TreeView = document.createElement('div');
 let mainUl = document.createElement('ul');
-TreeView.appendChild(mainUl);
 drawTree(structure, mainUl);
+TreeView.appendChild(mainUl);
 
 rootNode.appendChild(TreeView);
